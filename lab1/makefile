@@ -19,6 +19,7 @@ scan.o: scan.cpp globals.h scan.h
 
 util.o: util.cpp util.h globals.h
 	$(CXX) $(CFLAGS) -c util.cpp
+
 all: lexer
 
 test: lexer
