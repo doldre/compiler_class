@@ -1,3 +1,9 @@
+/************************************************
+ *  Author        :mathon
+ *  Email         :luoxinchen96@gmail.com
+ *  Time          :2017年 4月13日 星期四
+*************************************************/
+
 #include "globals.h"
 #include "scan.h"
 #include "util.h"
