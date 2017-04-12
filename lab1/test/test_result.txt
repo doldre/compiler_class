@@ -1,0 +1,41 @@
+add/*************************************************/
+TINY Lexical Analazer Result
+/*************************************************/
+
+5:	reserved word: read
+5:	ID, name = x
+5:	;
+6:	reserved word: if
+6:	NUM, val = 0
+6:	<
+6:	ID, name = x
+6:	reserved word: then
+7:	ID, name = fact
+7:	:=
+7:	NUM, val = 0
+7:	;
+8:	ID, name = i
+8:	:=
+8:	ID, name = x
+8:	;
+9:	reserved word: repeat
+10:	ID, name = fact
+10:	:=
+10:	ID, name = fact
+10:	+
+10:	ID, name = i
+10:	;
+11:	ID, name = i
+11:	:=
+11:	ID, name = i
+11:	-
+11:	NUM, val = 1
+12:	reserved word: until
+12:	ID, name = i
+12:	=
+12:	NUM, val = 0
+12:	;
+13:	reserved word: write
+13:	ID, name = fact
+14:	reserved word: end
+15:	EOF

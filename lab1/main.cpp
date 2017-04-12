@@ -1,10 +1,13 @@
 #include "globals.h"
+#include "scan.h"
 
 int lineno = 0;
 FILE *source;
 FILE *listing;
 FILE *code;
 
+bool EchoSource = false;
+bool TraceScan = true;
 
 int main(int argc, char *argv[]) 
 {
@@ -20,6 +23,11 @@ int main(int argc, char *argv[])
     if (source == NULL) {
         fprintf(stderr, "File %s not found\n", pgm);
     }
-
+    listing = stdout;
+    fprintf(listing, 
+            "/*************************************************/\n"
+            "TINY Lexical Analazer Result\n"
+            "/*************************************************/\n\n");
+    while(getToken() != ENDFILE);
     return 0;
 }
