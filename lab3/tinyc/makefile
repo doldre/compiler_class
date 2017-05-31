@@ -6,12 +6,12 @@ CXX = g++
 
 CFLAGS = -Wall -g
 
-OBJS = util.o scan.o main.o
+OBJS = util.o scan.o parser.o main.o
 
-lexer: $(OBJS)
-	$(CXX) $(CFLAGS) $(OBJS) -o lexer
+parser: $(OBJS)
+	$(CXX) $(CFLAGS) $(OBJS) -o parser
 
-main.o: main.cpp globals.h scan.h
+main.o: main.cpp globals.h parser.h 
 	$(CXX) $(CFLAGS) -c main.cpp
 
 scan.o: scan.cpp globals.h scan.h
@@ -20,11 +20,13 @@ scan.o: scan.cpp globals.h scan.h
 util.o: util.cpp util.h globals.h
 	$(CXX) $(CFLAGS) -c util.cpp
 
-all: lexer
+parser.o: util.cpp util.h globals.h parser.cpp parser.h
+	$(CXX) $(CFLAGS) -c parser.cpp
 
-test: lexer test/example.c
-	-./lexer test/example.c
+test: parser
+	-./parser test/example.tiny
+
 clean:
-	-rm lexer
+	-rm parser
 	-rm $(OBJS)
 
